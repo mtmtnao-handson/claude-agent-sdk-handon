@@ -70,15 +70,15 @@ async for message in query(prompt="auth.py のバグを修正して"):
 
 | セクション | 内容 | ファイル数 |
 |-----------|------|-----------|
-| 1 | [環境セットアップ](setup/01_environment_setup.md) | 1 |
-| 2 | [基本操作](basics/01_query_function.md) | 4 |
-| 3 | [オプション設定](options/01_options_overview.md) | 6 |
-| 4 | [ビルトインツール](tools/01_builtin_tools_overview.md) | 6 |
-| 5 | [応用機能](advanced/01_sessions.md) | 5 |
-| 6 | [実践プロジェクト](projects/01_code_reviewer.md) | 2 |
+| 0 | [環境セットアップ](00_setup/01_environment_setup.md) | 1 |
+| 1 | [基本操作](01_basics/01_query_function.md) | 4 |
+| 2 | [オプション設定](02_options/01_options_overview.md) | 6 |
+| 3 | [ビルトインツール](03_tools/01_builtin_tools_overview.md) | 6 |
+| 4 | [応用機能](04_advanced/01_sessions.md) | 5 |
+| 5 | [実践プロジェクト](05_projects/01_code_reviewer.md) | 2 |
 
 ---
 
 ## 次のステップ
 
-[環境セットアップ](setup/01_environment_setup.md) に進みましょう。
+[環境セットアップ](00_setup/01_environment_setup.md) に進みましょう。

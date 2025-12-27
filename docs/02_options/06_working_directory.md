@@ -465,4 +465,4 @@ class WorkspaceManager:
 
 ## 次のステップ
 
-オプション設定の全てを学習しました。次は [ビルトインツール概要](../tools/01_builtin_tools_overview.md) で、Claude が使用できるツールについて詳しく学びましょう。
+オプション設定の全てを学習しました。次は [ビルトインツール概要](../03_tools/01_builtin_tools_overview.md) で、Claude が使用できるツールについて詳しく学びましょう。

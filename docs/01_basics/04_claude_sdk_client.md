@@ -404,4 +404,4 @@ asyncio.run(manual_connection())
 
 ## 次のステップ
 
-基本操作をマスターしました。次は [オプション設定](../options/01_options_overview.md) で、`ClaudeAgentOptions` の詳細な設定方法を学びましょう。
+基本操作をマスターしました。次は [オプション設定](../02_options/01_options_overview.md) で、`ClaudeAgentOptions` の詳細な設定方法を学びましょう。
