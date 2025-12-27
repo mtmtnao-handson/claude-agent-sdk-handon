@@ -1,0 +1,9 @@
+{
+  "name": "Claude Agent SDKを始めよう",
+  "description": "Claude Agent SDKを使って、エージェントを構築、カスタマイズ、デプロイする方法を学びます。",
+  "icon": "abjad-arabic",
+  "duration": "約360分",
+  "level": "上級",
+  "order": 100,
+  "enabled": true
+}

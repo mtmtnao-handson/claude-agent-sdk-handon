@@ -1,0 +1,5 @@
+# Claude Agent SDK
+claude-agent-sdk>=0.1.0
+
+# 追加依存（プロジェクト用）
+httpx>=0.25.0

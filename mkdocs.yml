@@ -1,0 +1,58 @@
+site_name: Claude Agent SDK (Python) ハンズオン
+nav:
+  - トップページ: index.md
+  - 1. 環境セットアップ:
+    - 1.1 環境構築: setup/01_environment_setup.md
+  - 2. 基本操作:
+    - 2.1 query() 関数: basics/01_query_function.md
+    - 2.2 メッセージ型: basics/02_message_types.md
+    - 2.3 エラーハンドリング: basics/03_error_handling.md
+    - 2.4 ClaudeSDKClient: basics/04_claude_sdk_client.md
+  - 3. オプション設定:
+    - 3.1 オプション概要: options/01_options_overview.md
+    - 3.2 allowed_tools: options/02_allowed_tools.md
+    - 3.3 permission_mode: options/03_permission_mode.md
+    - 3.4 max_turns: options/04_max_turns.md
+    - 3.5 system_prompt: options/05_system_prompt.md
+    - 3.6 working_directory: options/06_working_directory.md
+  - 4. ビルトインツール:
+    - 4.1 ツール概要: tools/01_builtin_tools_overview.md
+    - 4.2 ファイル操作: tools/02_file_operations.md
+    - 4.3 Bash ツール: tools/03_bash_tool.md
+    - 4.4 検索ツール: tools/04_search_tools.md
+    - 4.5 Web ツール: tools/05_web_tools.md
+    - 4.6 Task ツール: tools/06_task_tool.md
+  - 5. 応用機能:
+    - 5.1 セッション: advanced/01_sessions.md
+    - 5.2 サブエージェント: advanced/02_subagents.md
+    - 5.3 フック: advanced/03_hooks.md
+    - 5.4 カスタムツール: advanced/04_custom_tools.md
+    - 5.5 MCP 連携: advanced/05_mcp_integration.md
+  - 6. 実践プロジェクト:
+    - 6.1 コードレビューア: projects/01_code_reviewer.md
+    - 6.2 ドキュメント生成: projects/02_documentation_generator.md
+theme:
+  name: material
+  palette:
+    primary: deep-purple
+  language: ja
+  features:
+    - navigation.footer
+    - content.code.copy
+    - navigation.sections
+    - navigation.expand
+use_directory_urls: false
+markdown_extensions:
+  - attr_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - tables
+  - toc:
+      permalink: true
+plugins:
+  - search
+copyright: Claude Agent SDK Hands-on Tutorial
