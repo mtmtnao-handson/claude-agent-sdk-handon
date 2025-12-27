@@ -99,8 +99,8 @@ pip install claude-agent-sdk
 
 ```
 Collecting claude-agent-sdk
-  Downloading claude_agent_sdk-0.1.0-py3-none-any.whl (50 kB)
-Successfully installed claude-agent-sdk-0.1.0
+  Downloading claude_agent_sdk-0.1.18-py3-none-any.whl (50 kB)
+Successfully installed claude-agent-sdk-0.1.18
 ```
 
 </details>
@@ -255,4 +255,4 @@ API キーが設定されていないか、無効です。
 
 ## 次のステップ
 
-環境構築が完了しました！次は [query() 関数](../basics/01_query_function.md) で、基本的な使い方を学びましょう。
+環境構築が完了しました！次は [query() 関数](../01_basics/01_query_function.md) で、基本的な使い方を学びましょう。
