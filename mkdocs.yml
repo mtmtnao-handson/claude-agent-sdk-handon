@@ -1,0 +1,91 @@
+# ============================================================
+# ハンズオン設定ファイル
+# 以下の項目を編集してください
+# ============================================================
+
+# ハンズオン名（ブラウザのタブに表示されます）
+site_name: "ハンズオン名を入力"
+
+# ハンズオンの説明
+site_description: "ハンズオンの説明を入力"
+
+# サイトURL（リポジトリ名に合わせて変更）
+# 例: https://d2g4vxtyjwu8ha.cloudfront.net/your-repo-name/
+site_url: https://d2g4vxtyjwu8ha.cloudfront.net/REPO_NAME/
+
+# ============================================================
+# ナビゲーション設定
+# ハンズオンの構成に合わせて編集してください
+# ============================================================
+nav:
+  - ホーム: index.md
+  - 概要: 01_overview.md
+  # 以下にステップを追加
+  # - ステップ1: 02_step1.md
+  # - ステップ2: 03_step2.md
+  # - クリーンアップ: 99_cleanup.md
+
+# ============================================================
+# 以下は共通設定（通常は変更不要）
+# ============================================================
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/brightness-7
+        name: ダークモードに切り替え
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/brightness-4
+        name: ライトモードに切り替え
+  font:
+    text: Noto Sans JP
+    code: JetBrains Mono
+  icon:
+    logo: material/book-open-page-variant
+  language: ja
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - content.code.copy
+    - content.code.annotate
+    - toc.follow
+
+use_directory_urls: true
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      permalink: true
+
+extra:
+  homepage: https://d2g4vxtyjwu8ha.cloudfront.net/
+
+copyright: "&copy; 2024-2025 Handson Portal"

@@ -1,0 +1,9 @@
+{
+  "name": "ハンズオン名を入力",
+  "description": "ハンズオンの説明を入力してください。",
+  "icon": "material-school",
+  "duration": "約60分",
+  "level": "初級",
+  "order": 100,
+  "enabled": true
+}

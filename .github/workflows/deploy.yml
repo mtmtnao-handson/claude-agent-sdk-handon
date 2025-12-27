@@ -1,0 +1,75 @@
+name: Deploy Handson to S3
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  AWS_REGION: ap-northeast-1
+  S3_BUCKET_NAME: aws-handson-portal-330866699040
+  CLOUDFRONT_DISTRIBUTION_ID: EENG6VQE43E1Y
+  # リポジトリ名を自動取得してデプロイ先パスに使用
+  DEPLOY_PATH: ${{ github.event.repository.name }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install mkdocs-material
+
+      - name: Build MkDocs
+        run: mkdocs build --clean
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Deploy to S3
+        run: |
+          echo "Deploying to s3://${{ env.S3_BUCKET_NAME }}/${{ env.DEPLOY_PATH }}/"
+          aws s3 sync site/ s3://${{ env.S3_BUCKET_NAME }}/${{ env.DEPLOY_PATH }}/ \
+            --delete \
+            --cache-control "max-age=3600"
+
+      - name: Upload metadata
+        run: |
+          if [ -f handson-meta.json ]; then
+            aws s3 cp handson-meta.json s3://${{ env.S3_BUCKET_NAME }}/${{ env.DEPLOY_PATH }}/handson-meta.json
+            echo "Metadata uploaded"
+          else
+            echo "No handson-meta.json found, skipping"
+          fi
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ env.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/${{ env.DEPLOY_PATH }}/*"
+
+      - name: Trigger portal update
+        if: success()
+        run: |
+          echo "Triggering portal workflow to update handson cards..."
+          gh workflow run deploy.yml --repo mtmtnao-handson/aws-handson-portal
+          echo "Portal update triggered successfully"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
